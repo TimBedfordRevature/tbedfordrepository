@@ -10,6 +10,10 @@ public class Assignment {
 		
 		boolean run = false;
 		
+		// Be wary! below does NOT check the value of boolean 'run', it CHANGES its value to true
+		// to do comparison you must use double equal sign "==" 
+		// '=' -> assignment
+		// "==" -> comparison
 		if(run = true) {
 			System.out.println("I ran!");
 			}
