@@ -13,6 +13,8 @@ public class Simulator {
 		
 		System.out.println(acc.total);
 		System.out.println(acc2.total);
+		
+		acc.deposit("Pay check", 75.00);
 	}
 
 }
