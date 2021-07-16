@@ -23,4 +23,8 @@ public class Account {
 		System.out.println("Your total: " + total);
 		return total;
 	}
+	
+	public double viewTotal() {
+		return total;
+	}
 }
