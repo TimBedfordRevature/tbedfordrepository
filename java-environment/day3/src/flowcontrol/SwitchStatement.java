@@ -15,9 +15,10 @@ public class SwitchStatement {
 		char letter = 'J';
 		
 		switch (letter) {
-		case 'A' :
+		case 'A' : {
 			System.out.println("A is for Assembly");
 			break;
+		}
 		case 'B' :
 			System.out.println("B is for Binary");
 			break;
