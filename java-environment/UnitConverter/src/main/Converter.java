@@ -38,8 +38,8 @@ public class Converter {
 					System.out.println(oz + " oz.\n");
 				}
 
-				else {
-					break;
+				else if(menuSelection == 3){
+					menuSelection = 1;
 				}
 				break;
 			}
@@ -60,8 +60,8 @@ public class Converter {
 					System.out.println(cm + " cm\n");
 				}
 
-				else {
-					break;
+				else if(menuSelection == 3){
+					menuSelection = 1;
 				}
 				break;
 			}
