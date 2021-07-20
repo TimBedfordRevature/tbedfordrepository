@@ -5,7 +5,7 @@ public class Parent {
 	protected String pro = "Protected";
 	String def = "Package";
 	private String pri = "Private";
-
+	
 	public static void main(String[] args) {
 		Parent p = new Parent();
 		System.out.println(p.pub);
