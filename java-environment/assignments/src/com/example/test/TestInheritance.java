@@ -1,6 +1,6 @@
 package com.example.test;
 
-import labs4.ActionFigure;
+import labs5.ActionFigure;
 
 public class TestInheritance {
 	public static void main(String[] args) {

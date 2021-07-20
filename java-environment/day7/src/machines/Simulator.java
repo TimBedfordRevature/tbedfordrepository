@@ -15,6 +15,8 @@ public class Simulator {
 		Plane p = new Plane();
 		p.start();
 		p.fly();
+		
+	
 	}
 
 }
