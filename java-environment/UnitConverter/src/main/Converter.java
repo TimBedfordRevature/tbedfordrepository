@@ -48,12 +48,14 @@ public class Converter {
 				System.out.println("\nDISTANCE - Please select an option:" + "\n1. Miles to Feet" + "\n2. Inches to Centimeters" + "\n3. back");
 				menuSelection = scan.nextInt();
 
+				//miles to feet conversion
 				if(menuSelection == 1) {
 					System.out.println("\nEnter number of miles: ");
 					ft = milesToFeet(scan.nextInt());
 					System.out.println(ft + " ft\n");
 				}
 
+				//inches to centimeters conversion
 				if(menuSelection == 2) {
 					System.out.println("\nEnter number of inches: ");
 					cm = inchesToCentimeters(scan.nextInt());
