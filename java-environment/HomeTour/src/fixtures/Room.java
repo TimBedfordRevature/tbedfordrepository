@@ -5,31 +5,30 @@ import java.util.Map;
 
 public class Room extends Fixture {
 
-	private Map<String, Room> exits = new HashMap<>();
+	protected HashMap<String, Room> exits = new HashMap<>();
 
 
 	public Room(String name, String shortDescription, String longDescription) {
 		super(name, shortDescription, longDescription);
 	}
 
+	public Room() {}
+
 
 	public void setExits(String direction, Room room) {
 		exits.put(direction, room);
 	}
 
-	public Map<String, Room> getExits(){
-		return this.exits;
+	public HashMap<String, Room> getExits(){
+		return exits;
 	}
 
-	public Fixture getExit(String direction) {
-		for(String k : exits.keySet()) {
-			if(k.startsWith(direction.toLowerCase().intern())) {
-				return exits.get(k);
-			}
-		}
-
-		return null;
+	public Room getExit(String direction) {
+		return exits.get(direction);
 	}
+
+
+
 
 
 	//	public void setExits(Room[] exits) {

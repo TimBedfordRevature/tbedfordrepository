@@ -2,9 +2,10 @@ package game;
 
 import fixtures.Room;
 import java.util.ArrayList;
-import java.util.Map;
 
-public class RoomManager {
+
+
+public class RoomManager extends Room {
 
 	public Room startingRoom;
 	static ArrayList<Room> rooms = new ArrayList<Room>();
@@ -29,5 +30,4 @@ public class RoomManager {
 	public void setStartingRoom(Room startingRoom) {
 		this.startingRoom = startingRoom;
 	}
-
 }
