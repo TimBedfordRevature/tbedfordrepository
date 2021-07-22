@@ -13,7 +13,7 @@ public abstract class Fixture {
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 	}
-	
+
 	public Fixture() {}
 
 
@@ -47,6 +47,6 @@ public abstract class Fixture {
 	}
 
 
-	
+
 
 }

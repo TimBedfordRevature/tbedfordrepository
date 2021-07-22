@@ -1,46 +1,33 @@
 package game;
 
 import fixtures.Room;
+import java.util.ArrayList;
+import java.util.Map;
 
-public class RoomManager extends Room {
-	
+public class RoomManager {
+
 	public Room startingRoom;
-	public Room[] rooms;
-	
-	public RoomManager() {
-		super();
-		this.startingRoom = startingRoom;
-		this.rooms = rooms;
-	}
+	static ArrayList<Room> rooms = new ArrayList<Room>();
 
 	public void init() {
-	    Room foyer = new Room(
-			"The Foyer",
-			"a small foyer",
-			"The small entryway of a neo-colonial house. A dining room is open to the south, where a large table can be seen." + "\n"
-			+ "The hardwood floor leads west into doorway, next to a staircase that leads up to a second floor." + "\n"
-			+ "To the north is a small room, where you can see a piano.");
-			this.rooms[0] = foyer;
-	        this.startingRoom = rooms[0];
-	        
-	    Room livingRoom = new Room("Living Room", "Family gathering room", "Open room with some couches, a rug, and a TV");
-	    this.rooms[1] = livingRoom; 
+
+		Room livingRoom = new Room("Living Room", "Family gathering room", "Open room with some couches, a rug, and a TV");
+		rooms.add(livingRoom);
+		setStartingRoom(livingRoom);
+
+		Room kitchen = new Room("Kitchen", "Food preperation and consumption room", "Room filled with cooking appliances and food");
+		rooms.add(kitchen);
+		livingRoom.setExits("north", kitchen);
+		kitchen.setExits("south", livingRoom);
+
 	}
-	
+
 	public Room getStartingRoom() {
 		return this.startingRoom;
 	}
-	
+
 	public void setStartingRoom(Room startingRoom) {
-		this.startingRoom = rooms[0];
-	}
-
-	public void setRooms(Room[] rooms) {
-		this.rooms = rooms;
-	}
-
-	public Room[] getRooms() {
-		return this.rooms;
+		this.startingRoom = startingRoom;
 	}
 
 }
