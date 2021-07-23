@@ -14,6 +14,7 @@ public class Main {
 
 		System.out.println("Commands: \nMove to new room - 'go' + direction (EX: go north)" + "\nInteract with item - 'inspect item'" + "\nTo leave tour enter - exit tour\n");
 
+		System.out.println("Welcome to the tour!\n");
 		RoomManager rm = new RoomManager();
 		rm.init();
 		Player p = new Player();
@@ -21,6 +22,7 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 
 
+		// Game loop
 		while(running) {
 			printRoom(p);
 			printExits(p);
@@ -30,7 +32,7 @@ public class Main {
 			parse(command, p);
 		}
 
-		System.out.println("Goodbye");
+		System.out.println("\nThanks for coming to the tour!");
 		scan.close();
 	}
 
@@ -68,42 +70,46 @@ public class Main {
 	}
 
 	private static void parse(String[] command, Player p) {
-		String action = command[0];
-		String target = command[1];
-
-		switch(action) {
-
-		case "go" : {
-			if(target.equals("north")) {
-				p.setCurrentRoom(p.getCurrentRoom().getExit(target));
-			}
-			if(target.equals("south")) {
-				p.setCurrentRoom(p.getCurrentRoom().getExit(target));
-			}
-			if(target.equals("east")) {
-				p.setCurrentRoom(p.getCurrentRoom().getExit(target));
-			}
-			if(target.equals("west")) {
-				p.setCurrentRoom(p.getCurrentRoom().getExit(target));
-			}
-			//			if(target.equals(null)) {
-			//				System.out.println("Invalid input: must enter a direction");
-			//			}
+		if(command.length < 2 || command.length > 2) {
+			System.out.println("Invalid input: must enter valid  command\n");
+			String target = null;
 		}
-		break;
-		case "exit" : {
-			if(target.equals("tour")) {
-				running = false;
-			}
-		}
-		break;
+		else {
+			String action = command[0];
+			String target = command[1];
 
-		case "inspect" : {
-			if(target.equals("item")) {
-				itemDescription(p);
-			}
-		}
+				switch(action) {
 
+				case "go" : {
+					if(target.equals("north")) {
+						p.setCurrentRoom(p.getCurrentRoom().getExit(target));
+					}
+					if(target.equals("south")) {
+						p.setCurrentRoom(p.getCurrentRoom().getExit(target));
+					}
+					if(target.equals("east")) {
+						p.setCurrentRoom(p.getCurrentRoom().getExit(target));
+					}
+					if(target.equals("west")) {
+						p.setCurrentRoom(p.getCurrentRoom().getExit(target));
+					}
+				}
+				break;
+				case "exit" : {
+					if(target.equals("tour")) {
+						running = false;
+					}
+				}
+				break;
+
+				case "inspect" : {
+					if(target.equals("item")) {
+						itemDescription(p);
+					}
+				}
+
+				}
+			}
 		}
 	}
-}
+
