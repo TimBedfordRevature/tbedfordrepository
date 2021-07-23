@@ -13,6 +13,12 @@ public abstract class Fixture {
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 	}
+	public Fixture(String name, String shortDescription) {
+		super();
+		this.name = name;
+		this.shortDescription = shortDescription;
+
+	}
 
 	public Fixture() {}
 
@@ -44,6 +50,13 @@ public abstract class Fixture {
 
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(shortDescription);
+		return builder.toString();
 	}
 
 
