@@ -37,7 +37,7 @@ public class Main {
 	}
 
 	private static void printRoom(Player player) {
-
+		System.out.println("========================================================================================================================");
 		System.out.println("Room: " + player.getCurrentRoom().name);
 		System.out.println("Short Desc: " + player.getCurrentRoom().shortDescription);
 		System.out.println("Long Desc: " + player.getCurrentRoom().longDescription);
@@ -48,6 +48,7 @@ public class Main {
 		for(int i = 0; i < size; i++) {
 			Items item = p.getCurrentRoom().getItems().get(i);
 			System.out.println("Items in Room: " + item.getName());
+			System.out.println("========================================================================================================================\n");
 		}
 	}
 
@@ -71,8 +72,7 @@ public class Main {
 
 	private static void parse(String[] command, Player p) {
 		if(command.length < 2 || command.length > 2) {
-			System.out.println("Invalid input: must enter valid  command\n");
-			String target = null;
+			System.out.println("Invalid input: must enter valid command\n");
 		}
 		else {
 			String action = command[0];
